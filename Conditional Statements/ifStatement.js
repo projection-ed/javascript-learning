@@ -6,6 +6,7 @@ if ( 5 > 10 ) {
 }
 console.log("After If....")
 
+
 let age = 17
 if (age >= 18 ){
     console.log("You are eligible to vote")
