@@ -31,3 +31,42 @@ console.log("Hello".lastIndexOf("l"))
 
 //9. match(): Searches a string for a match against a regular expression, and returns the matches.
 console.log("hello@gmail.com".match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/))
+
+//10. toUpperCase()
+console.log("Hello".toUpperCase())
+
+//11. toLowerCase()
+console.log("Hello".toLowerCase())
+
+//12. trim()
+let a = " hello        world a    "
+console.log(a.trim())
+
+//13. trimStart()
+console.log("   Hello   ".trimStart())
+
+//14. trimStart()
+console.log("   Hello   ".trimEnd())
+
+//15. padStart()
+console.log("1234567890".padStart(15,"x")) 
+console.log("1234567890".padEnd(15,"x"))
+
+//16. repeat()
+console.log("X".repeat(30))
+
+//17. replace(), replaceAll()
+console.log("Hello, World!, World, World".replaceAll("World", "India"))
+
+//18. split()
+console.log("Hello, World!, My name is harsh".split(""))
+
+//19. slice()
+                        
+console.log("Hello, World!".slice(-20))
+
+//20. substring()
+console.log("Hello, World!".substring(-20))
+
+//21. substr
+console.log("Apple, Banana, Kiwi".substr(7,6))
