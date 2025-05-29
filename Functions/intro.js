@@ -14,7 +14,7 @@
 // -> Arguments
 // -> Return
 
-// Function Defination
+// Function Defination // Function Statements
 function run(){
     console.log("hello world");
 }
