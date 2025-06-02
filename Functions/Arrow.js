@@ -48,7 +48,6 @@ let obj = {
         console.log(this);
     }
 }
-
 obj.greet()
 obj.check()
 obj.check3()
