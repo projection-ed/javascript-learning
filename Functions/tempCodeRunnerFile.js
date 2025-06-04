@@ -1,1 +1,2 @@
-run
+ // resolve()///fullfilled
+    // reject()///Rejected
