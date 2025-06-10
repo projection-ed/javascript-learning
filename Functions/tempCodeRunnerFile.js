@@ -1,2 +1,1 @@
- // resolve()///fullfilled
-    // reject()///Rejected
+result
