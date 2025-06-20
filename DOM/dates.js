@@ -133,6 +133,111 @@ candidates = [
     }
 ]
 
+Excellent! Let’s create a **more complex, real-world-style problem** involving nested data, multi-step transformation, filtering, grouping, and aggregation — **perfect for map, filter, reduce, and possibly even chaining them**.
+
+---
+
+## 🔧 Complex Real-World Problem: **Project Allocation Insights**
+
+### 📘 Scenario
+
+You work in HR analytics at a consulting firm. Each **employee** has worked on multiple **projects**. You need to:
+
+> 🔎 **Identify employees who:**
+>
+> 1. Have worked on **3 or more projects** in the **last 2 years** (from today: June 2025).
+> 2. On those projects, they must have used both **Python** and **AWS** at least once.
+> 3. From that filtered data, generate a new object per employee that contains:
+>
+>    * `name`, `email`
+>    * `total_projects_last_2_years`
+>    * `matching_projects`: List of project names with both "Python" & "AWS"
+>    * `tech_stack`: Union of all technologies used across matching projects
+
+---
+
+### 🧾 Sample Nested Input (3 employees)
+
+```python
+from datetime import date
+
+employees = [
+    {
+        "name": "Alice Johnson",
+        "email": "alice.j@example.com",
+        "projects": [
+            {"name": "Inventory System", "year": 2024, "tech": ["Python", "Django", "AWS"]},
+            {"name": "CI/CD Pipeline", "year": 2023, "tech": ["Python", "AWS", "Docker"]},
+            {"name": "ML API", "year": 2024, "tech": ["Python", "Flask", "AWS", "Pandas"]},
+            {"name": "Old CRM", "year": 2021, "tech": ["PHP", "MySQL"]}
+        ]
+    },
+    {
+        "name": "Bob Smith",
+        "email": "bob.s@example.com",
+        "projects": [
+            {"name": "Cloud Migration", "year": 2023, "tech": ["AWS", "Terraform"]},
+            {"name": "Legacy App Support", "year": 2023, "tech": ["Java", "Spring"]},
+            {"name": "Log Analytics", "year": 2022, "tech": ["Python", "AWS", "Kibana"]}
+        ]
+    },
+    {
+        "name": "Charlie Kim",
+        "email": "charlie.k@example.com",
+        "projects": [
+            {"name": "Realtime Dashboard", "year": 2025, "tech": ["React", "Node.js"]},
+            {"name": "ML Engine", "year": 2023, "tech": ["Python", "Scikit-learn", "AWS"]},
+            {"name": "Data Collector", "year": 2024, "tech": ["Python", "Kafka", "AWS"]},
+            {"name": "Reporting Tool", "year": 2025, "tech": ["Python", "AWS", "Plotly"]},
+        ]
+    }
+]
+```
+
+---
+
+### ✅ Your Output Should Be Like:
+
+```python
+[
+    {
+        "name": "Alice Johnson",
+        "email": "alice.j@example.com",
+        "total_projects_last_2_years": 3,
+        "matching_projects": ["Inventory System", "CI/CD Pipeline", "ML API"],
+        "tech_stack": ["Python", "Django", "AWS", "Docker", "Flask", "Pandas"]
+    },
+    {
+        "name": "Charlie Kim",
+        "email": "charlie.k@example.com",
+        "total_projects_last_2_years": 4,
+        "matching_projects": ["ML Engine", "Data Collector", "Reporting Tool"],
+        "tech_stack": ["Python", "Scikit-learn", "AWS", "Kafka", "Plotly"]
+    }
+]
+```
+
+---
+
+### 💡 Hints to Solve:
+
+* Step 1: Filter projects by `year >= 2023`
+* Step 2: Keep only employees with **3 or more such projects**
+* Step 3: From those, pick projects with **both Python & AWS**
+* Step 4: Map into a new object with fields:
+
+  * name, email
+  * count of total recent projects
+  * project names matching Python & AWS
+  * merged tech stack (unique only)
+
+---
+
+Would you like me to:
+
+* **Write full code** for this solution?
+* Increase complexity by grouping by department, calculating billing hours, etc.?
+  Let me know how deep you'd like to go!
 
 
 
